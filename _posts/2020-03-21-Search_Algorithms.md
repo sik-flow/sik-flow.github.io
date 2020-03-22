@@ -121,7 +121,7 @@ with plt.style.context('fivethirtyeight'):
 ```
 
 
-![png](Search_Algorithms_files/Search_Algorithms_14_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Search_Algorithms_files/Search_Algorithms_14_0.png)
 
 
 I see that finding the missing element takes a huge amount of time, this is because it has to try every element in the list and because it is grabbing elements at random, it could have to try more than the length of my list.  
@@ -145,7 +145,7 @@ with plt.style.context('fivethirtyeight'):
 ```
 
 
-![png](Search_Algorithms_files/Search_Algorithms_16_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Search_Algorithms_files/Search_Algorithms_16_0.png)
 
 
 We see that finding the last element and finding the middle element takes about the same amount of time, this is due to the random checking so the order of the elements do not matter on a random search. 
@@ -210,7 +210,7 @@ with plt.style.context('fivethirtyeight'):
 ```
 
 
-![png](Search_Algorithms_files/Search_Algorithms_22_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Search_Algorithms_files/Search_Algorithms_22_0.png)
 
 
 We see that finding the first element does not change regardless of the number of elements in the list.  Also we see that the other elements increase in a linear fashion.  Now lets see how it compares to random search. 
@@ -264,7 +264,7 @@ with plt.style.context('fivethirtyeight'):
 ```
 
 
-![png](Search_Algorithms_files/Search_Algorithms_24_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Search_Algorithms_files/Search_Algorithms_24_0.png)
 
 
 We see that random search and linear search are equal at the smallest list sizes, but as the lists increase in size the random search starts taking longer.  This makes sense because with random search we could potentially be checking the same element multiple times. 
@@ -380,7 +380,7 @@ with plt.style.context('fivethirtyeight'):
 ```
 
 
-![png](Search_Algorithms_files/Search_Algorithms_36_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Search_Algorithms_files/Search_Algorithms_36_0.png)
 
 
 We see that when the element is not in the list, it takes significantly longer to find.  This is because the binary search is having to perform the maximum number of checks on the list.  
@@ -402,7 +402,7 @@ with plt.style.context('fivethirtyeight'):
 ```
 
 
-![png](Search_Algorithms_files/Search_Algorithms_38_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Search_Algorithms_files/Search_Algorithms_38_0.png)
 
 
 We see that finding the first, middle, and last element take about the same amount of time.  As the list gets larger the time to find the middle element decreases.  Since binary search is constantly splitting the dataset and looking for the middle number, this makes sense.
@@ -464,7 +464,7 @@ with plt.style.context('fivethirtyeight'):
 ```
 
 
-![png](Search_Algorithms_files/Search_Algorithms_40_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Search_Algorithms_files/Search_Algorithms_40_0.png)
 
 
 We see that random search takes much longer than linear search and binary search.  
@@ -518,7 +518,7 @@ with plt.style.context('fivethirtyeight'):
 ```
 
 
-![png](Search_Algorithms_files/Search_Algorithms_42_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Search_Algorithms_files/Search_Algorithms_42_0.png)
 
 
 Comparing just linear search and random search - we see that when checking for the first element linear search is faster than binary search (however the chances of always looking for the first element is small).  We also see that binary search and linear search are about the same when the dataset is small, as the dataset increases is when we the the advanatage of binary search.  
