@@ -11,7 +11,7 @@ Jack Hughes was recently the number one overall pick in the 2019 NHL draft.  Jac
 
 In Jack Hughes’ rookie year he scored 7 goals and 14 assists for 21 points in 61 games (0.34 points per game).  Let’s first look at how this compares to other number one overall draft picks.  To accomplish this I got data from [elite prospects](https://www.eliteprospects.com/) for all number one overall draft picks from 2000 to 2019.  
 
-<img src="rookie_year.png" align = "left"/>
+<img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/Jack_Hughes/rookie_year.png" align = "left"/>
 
 We see that Jack Hughes score 0.34 PPG in his first year, while the average #1 overall pick from 2000-2019 scored 0.73 points pergame.  Additionally, Jack Hughes scored less points than any other #1 pick in the last 20 years.  
 
@@ -19,7 +19,7 @@ We see that Jack Hughes score 0.34 PPG in his first year, while the average #1 o
 
 I next wanted to see how Jack Hughes did versus all other 1st round picks and compare how he did first players that had similar rookie seasons. 
 
-<img src="other_round_1.png" align = "left"/>
+<img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/Jack_Hughes/other_round_1.png" align = "left"/>
 
 We see all of these players had very similar rookie seasons to Jack Hughes.  In fact, Jack Hughes had a better rookie year than Tyler Seguin who has turned into a legitimate NHL superstar.  We also see that Jack Hughes had a similar rookie year to Aleksander Barkov who has turned out very nicely.  
 
@@ -27,7 +27,7 @@ One statistic about Jack Hughes that really intrigued me as a player was the way
 
 I decided to make a scatter plot of every player that played in the U18 Championship and played in the U20 Championship as an underage player.  All players that made an [All-NHL Team](https://www.hockey-reference.com/awards/nhl_all_star.html) are in pointed as navy blue, players that did not make an All-NHL team are orange, and Jack Hughes is the red dot. 
 
-<img src="championship.png" align = "left"/>
+<img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/Jack_Hughes/championship.png" align = "left"/>
 
 We see that Jack Hughes scored more points in the U18 Championship, than all but a few players.  It is quite impressive some of the names he scores more points - Connor McDavid, Patrick Kane (whom he is often compared to), Alex Ovechkin).  The player he had the most similar U18 Championship and U20 Championship to is reigning NHL MVP Nikita Kucherov.
 
