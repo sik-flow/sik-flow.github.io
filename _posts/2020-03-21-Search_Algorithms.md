@@ -1,4 +1,12 @@
-# Random Search vs Linear Search vs Binary Search 
+---
+layout: post
+title: Random Search vs Linear Search vs Binary Search 
+---
+
+{{ page.title }}
+================
+
+<p class="meta">21 March 2020 - Kansas City</p>
 
 I recently read through this wonderful tutorial from Real Python: [tutorial](https://realpython.com/binary-search-python/) and was inspired to write a bit about it.  I feel that for me going through a tutorial and then writing a blog post really makes me learn a topic a little more. 
 
