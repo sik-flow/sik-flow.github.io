@@ -12,7 +12,7 @@ title: Jeff Herman
   </ul>
   <h1>Sports Posts</h1>
   <ul class="posts">
-    {% for post in site.sport_posts %}
+    {% for post in site.sportposts %}
       <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
