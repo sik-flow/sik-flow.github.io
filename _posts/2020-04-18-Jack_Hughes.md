@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Jack Hughes Rookie Year - Should we be Concerned?
+category: sports
 ---
 
 {{ page.title }}
