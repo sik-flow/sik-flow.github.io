@@ -41,7 +41,7 @@ All of the correlation coefficients are really similar between 0.52 and 0.55.  N
 
 ![https://raw.githubusercontent.com/sik-flow/Crossfit_Scrape/master/Images/permutation_importance.png](https://raw.githubusercontent.com/sik-flow/Crossfit_Scrape/master/Images/permutation_importance.png)
 
-This shows that after multiple shuffles the $R^2$ for 19.3 changed on average 0.35, while the average $$R^2$$ for 19.4 only changed 0.06.  This means that the event 19.3 had a big impact on predicting their overall score, while 19.4 did not have much of an impact on predicting their overall score.  This could be caused by a lot of different factors - my guess is that 19.3 was a workout that was a "seperator".  In that if you score badly on 19.3, you are going to do badly overall relatively. 
+This shows that after multiple shuffles the $$R^2$$ for 19.3 changed on average 0.35, while the average $$R^2$$ for 19.4 only changed 0.06.  This means that the event 19.3 had a big impact on predicting their overall score, while 19.4 did not have much of an impact on predicting their overall score.  This could be caused by a lot of different factors - my guess is that 19.3 was a workout that was a "seperator".  In that if you score badly on 19.3, you are going to do badly overall relatively. 
 
 ### Next Steps
 
