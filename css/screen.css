@@ -107,14 +107,8 @@ ul.posts {
     margin-left: 1em;
   }
 
-  .site .title .extra a.extra:hover {
+  .site .title a.extra:hover {
     color: black;
-  }
-
-  .extra {
-    color: #aaa;
-    text-decoration: none;
-    margin-left: 1em;
   }
 
   .site .meta {
