@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using Monte Carlo Simulation to Determine who Makes More Money at University of Missouri
+title: Who Makes More Money Using a Monte Carlo Simulation
 ---
 
 {{ page.title }}
