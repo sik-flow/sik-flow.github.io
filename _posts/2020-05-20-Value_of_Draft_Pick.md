@@ -41,16 +41,59 @@ $$T Statistic = \frac{coefficient}{standard error}$$<br>
 
 We now see that the first overall pick is significantly higher than every other pick, this is because there is significantly more risk with future picks.  For a comparison, lets look at the number one overall picks during this time<br>
 
-| Player         | PPG  |
-|----------------|------|
-| Sidney Crosby  | 1.28 |
-| Alex Ovechkin  | 1.11 |
-| Patrick Kane   | 1.05 |
-| Steven Stamkos | 1.04 |
-| Ilya Kovalchuk | 0.95 |
-| John Tavares   | 0.94 |
-| Taylor Hall    | 0.90 |
-| Rick Nash      | 0.76 |
+<table>
+<colgroup>
+<col width="60%" />
+<col width="40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Player</th>
+<th>PPG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td markdown="span">Sidney Crosby</td>
+<td markdown="span">1.28</td>
+</tr>
+<tr>
+<td markdown="span">Alex Ovechkin</td>
+<td markdown="span">1.11
+</td>
+</tr>
+<tr>
+<td markdown="span">Patrick Kane</td>
+<td markdown="span">1.05
+</td>
+</tr>
+<tr>
+<td markdown="span">Steven Stamkos</td>
+<td markdown="span">1.04
+</td>
+</tr>
+<tr>
+<td markdown="span">Ilya Kovalchuk</td>
+<td markdown="span">0.95
+</td>
+</tr>
+<tr>
+<td markdown="span">John Tavares</td>
+<td markdown="span">0.94
+</td>
+</tr>
+<tr>
+<td markdown="span">Taylor Hall</td>
+<td markdown="span">0.90
+</td>
+</tr>
+<tr>
+<td markdown="span">Rick Nash</td>
+<td markdown="span">0.76
+</td>
+</tr>
+</tbody>
+</table>
 
 Most of these players ended up as legitimate superstars (as a reminder Rick Nash had injury problems).  Now lets compare this to the 2 overall picks<br>
 
