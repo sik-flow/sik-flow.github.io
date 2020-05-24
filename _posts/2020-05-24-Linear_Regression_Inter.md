@@ -9,7 +9,7 @@ title: Interpret Linear Regression
 <p class="meta">24 May 2020 - Kansas City</p> 
 
 Linear Regression has the reputation of being one of the easiest machine learning models to interpret.  A visualization I have always really liked is the following: 
-![interp_vs_accuracy.png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/linear_regression_interp/feature_importance.png)
+![interp_vs_accuracy.png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/linear_regression_interp/interp_vs_accuracy.png)
 [Source](https://www.researchgate.net/figure/nterpretability-accuracy-tradeoff-in-classification-algorithms-of-machine-learning_fig2_332409898)
 
 We see that linear regression is at the top left where it is a model that is very interpretable, but does not provide much in the way of accuracy.  If we are going to use linear regression for what it is the absolute best at, then we should be able to fully take advantage of the interpretability that it has.  
@@ -161,5 +161,5 @@ A 1% increase in temperature would increase the number of bikes rented by 0.4%.
 ## References
 
 I used the following references very heavily in this post
-- https://christophm.github.io/interpretable-ml-book/limo.html
-- https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqhow-do-i-interpret-a-regression-model-when-some-variables-are-log-transformed/
+- [https://christophm.github.io/interpretable-ml-book/limo.html](https://christophm.github.io/interpretable-ml-book/limo.html)
+- [https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqhow-do-i-interpret-a-regression-model-when-some-variables-are-log-transformed/](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqhow-do-i-interpret-a-regression-model-when-some-variables-are-log-transformed/)
