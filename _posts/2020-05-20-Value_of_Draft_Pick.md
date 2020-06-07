@@ -6,7 +6,7 @@ title: How much is a NHL Draft Pick Worth?
 {{ page.title }}
 ================
 
-<p class="meta">10 May 2020 - Kansas City</p> 
+<p class="meta">20 May 2020 - Kansas City</p> 
 
 The NFL has a famous chart for quantitatively assigning a value to a draft pick ([NFL Draft Pick Chart](https://www.pro-football-reference.com/draft/draft_trade_value.htm)).  Could something similar be made for hockey to assign values to NHL draft picks? 
 
