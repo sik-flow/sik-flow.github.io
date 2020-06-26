@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Cupper</title>
+    <link>https://example.com/tags/</link>
+    <description>Recent content in Tags on Cupper</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>interpretability</title>
+      <link>https://example.com/tags/interpretability/</link>
+      <pubDate>Sat, 06 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/interpretability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linear-regression</title>
+      <link>https://example.com/tags/linear-regression/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/linear-regression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sports-analytics</title>
+      <link>https://example.com/tags/sports-analytics/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/sports-analytics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine-learning</title>
+      <link>https://example.com/tags/machine-learning/</link>
+      <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>optimization</title>
+      <link>https://example.com/tags/optimization/</link>
+      <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/optimization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>svm</title>
+      <link>https://example.com/tags/svm/</link>
+      <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/svm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>algorithms</title>
+      <link>https://example.com/tags/algorithms/</link>
+      <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/algorithms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>computer-science</title>
+      <link>https://example.com/tags/computer-science/</link>
+      <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/computer-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data-vis</title>
+      <link>https://example.com/tags/data-vis/</link>
+      <pubDate>Thu, 31 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/data-vis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>folium</title>
+      <link>https://example.com/tags/folium/</link>
+      <pubDate>Thu, 31 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/folium/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>politics-analytics</title>
+      <link>https://example.com/tags/politics-analytics/</link>
+      <pubDate>Thu, 31 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/politics-analytics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>monte-carlo</title>
+      <link>https://example.com/tags/monte-carlo/</link>
+      <pubDate>Sat, 26 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/monte-carlo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stat-test</title>
+      <link>https://example.com/tags/stat-test/</link>
+      <pubDate>Sat, 26 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/stat-test/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

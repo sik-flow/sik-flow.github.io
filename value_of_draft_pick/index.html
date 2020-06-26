@@ -6,12 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.72.0" />
-  <link rel="canonical" href="https://example.com/">
+  <link rel="canonical" href="https://example.com/value_of_draft_pick/">
 
-  
-    
-      <meta name="description" content="Data science ramblings and notes">
-    
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -38,9 +34,7 @@
 
   
   
-    
-  
-  <title>Cupper</title>
+  <title>How much is a NHL Draft Pick Worth? | Cupper</title>
 </head>
 
   <body>
@@ -165,7 +159,7 @@
       
       
       
-      <a href="/" aria-current="page">
+      <a href="/" >
         <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
           <use xlink:href="#bookmark"></use>
         </svg>
@@ -178,7 +172,7 @@
       
       
       
-      <a href="/post/" >
+      <a href="/post/" aria-current="page">
         <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
           <use xlink:href="#bookmark"></use>
         </svg>
@@ -234,11 +228,291 @@
         <div>
           
   <main id="main">
-    <h1>Home</h1>
-    <p><img src="/images/jeff_herman.jpg" alt="Jeff Herman" width="300" height="400" /></p>
-<p>Jeff Herman is a data scientist instructor at a online bootcamp. Jeff is using this site as a way to organize his data science notes.</p>
+    <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      How much is a NHL Draft Pick Worth?
+    </h1>
+
+    <div class="date">
+      
+      
+      <strong>Publish date: </strong>May 20, 2020
+      
+        
+      
+    </div>
+
+    
+      <div class="tags">
+        <strong>Tags: </strong>
+        <ul aria-label="tags">
+          
+            <li>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use xlink:href="#tag"></use>
+              </svg>
+              
+              <a href="https://example.com/tags/sports-analytics/">sports-analytics</a>
+            </li>
+          
+        </ul>
+      </div>
+    
+    
+    
+      
+
+
+    
+
+    <p>The NFL has a famous chart for quantitatively assigning a value to a draft pick (<a href="https://www.pro-football-reference.com/draft/draft_trade_value.htm">NFL Draft Pick Chart</a>).  Could something similar be made for hockey to assign values to NHL draft picks?</p>
+<h3 id="the-data">The Data</h3>
+<p>I scraped data NHL draft data from the 2000 draft to the 2010 draft from <a href="https://www.eliteprospects.com/">Elite Prospects</a>.  I collected player statistics from 2,741 players that were drafted during this time.  To normalize the data, I only grabbed players that were drafted in the first 210 picks, as the 2010 draft only had 7 rounds and previous drafts had more rounds.  I am also going to be using points per game to compare players, so I am going to limit my exploration to only forwards.  This left me with 1,324 players to analyze.</p>
+<h3 id="exploration">Exploration</h3>
+<p>I first looked at the total points by draft class.<br>
+<img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/Value_of_Draft_Pick/total_points_by_year.png" alt="./images/Value_of_Draft_Pick/total_points_by_year.png"></p>
+<p>We see there is a little fluctuation in the total points by draft year.  Now I want to see what percentage of players drafted played in the NHL.<br>
+<img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/Value_of_Draft_Pick/percent_in_nhl_year.png" alt="./images/Value_of_Draft_Pick/percent_in_nhl_year.png"></p>
+<p>We see that the number of players that play in the NHL varies between 40% and around 60%.  Now I am going to see how the Percentage of Players varies by the round they were drafted.<br>
+<img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/Value_of_Draft_Pick/percent_by_round.png" alt="./images/Value_of_Draft_Pick/percent_by_round.png"></p>
+<p>We see that players drafted in the first round over 90% end up playing in the NHL, while players drafted in the 7th round only about half end up playing a single game in the NHL.  Now that we looked at who makes the NHL, lets look at who is most successful in the NHL.  To calculate success I am going to use points per game as my metric.  First I will look at points per game by round drafted.<br>
+<img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/Value_of_Draft_Pick/ppg_by_round_drafted.png" alt="./images/Value_of_Draft_Pick/ppg_by_round_drafted.png"><br>
+We see there is a steep decline in points per game after the first round.  This decline continues all the way to round 7, however after round 4 the decline is very minimal.  Now I am going to see how points per game changes based on pick in the first round.<br>
+<img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/Value_of_Draft_Pick/ppg_by_pick.png" alt="./images/Value_of_Draft_Pick/ppg_by_pick.png"><br></p>
+<p>After the first pick the PPG dips down significantly.  We see a little bit of a plateau between picks 3 to 5, after pick 5 it looks like white noise all the way to pick 30.  This tells me that after pick 5 there is a lot of randomness in selecting players.  If given the opportunity, trade up for a top 5 pick and if possible trade up for the number one overall pick.</p>
+<h3 id="modeling-pick-importance">Modeling Pick Importance</h3>
+<p>We see that earlier picks are more valuable, but just how much more valuable are they? To start I built regression model where each pick was treated as a categorical variable.  I then plotted out the coefficient for each pick.<br>
+<img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/Value_of_Draft_Pick/expected_ppg_by_pick.png" alt="./images/Value_of_Draft_Pick/expected_ppg_by_time.png"><br>
+We see that the expected points per game decreases rapidly after the 1st selection and is very random after the first 30 selections. This does not incorporate the risk of the selection, we previously saw that picks in the later round have fewer players that make the NHL.  To incorporate the risk of the selection, I am going to divide each coefficient (commonly referred to as the T-Statistic).<br>
+$$T Statistic = \frac{coefficient}{standard error}$$<br>
+<img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/Value_of_Draft_Pick/expected_normalized_by_risk.png" alt="./images/Value_of_Draft_Pick/expected_normalized_by_risk.png"></p>
+<p>We now see that the first overall pick is significantly higher than every other pick, this is because there is significantly more risk with future picks.  For a comparison, lets look at the number one overall picks during this time<br></p>
+<table>
+<colgroup>
+<col width="60%" />
+<col width="40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Player</th>
+<th>PPG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td markdown="span">Sidney Crosby</td>
+<td markdown="span">1.28</td>
+</tr>
+<tr>
+<td markdown="span">Alex Ovechkin</td>
+<td markdown="span">1.11
+</td>
+</tr>
+<tr>
+<td markdown="span">Patrick Kane</td>
+<td markdown="span">1.05
+</td>
+</tr>
+<tr>
+<td markdown="span">Steven Stamkos</td>
+<td markdown="span">1.04
+</td>
+</tr>
+<tr>
+<td markdown="span">Ilya Kovalchuk</td>
+<td markdown="span">0.95
+</td>
+</tr>
+<tr>
+<td markdown="span">John Tavares</td>
+<td markdown="span">0.94
+</td>
+</tr>
+<tr>
+<td markdown="span">Taylor Hall</td>
+<td markdown="span">0.90
+</td>
+</tr>
+<tr>
+<td markdown="span">Rick Nash</td>
+<td markdown="span">0.76
+</td>
+</tr>
+</tbody>
+</table>
+<p>Most of these players ended up as legitimate superstars (as a reminder Rick Nash had injury problems).  Now lets compare this to the 2 overall picks<br></p>
+<table>
+<thead>
+<tr>
+<th>Player</th>
+<th>PPG</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Evgeni Malkin</td>
+<td>1.19</td>
+</tr>
+<tr>
+<td>Dany Heatley</td>
+<td>0.91</td>
+</tr>
+<tr>
+<td>Tyler Seguin</td>
+<td>0.86</td>
+</tr>
+<tr>
+<td>Jason Spezza</td>
+<td>0.84</td>
+</tr>
+<tr>
+<td>Eric Staal</td>
+<td>0.82</td>
+</tr>
+<tr>
+<td>Bobby Ryan</td>
+<td>0.67</td>
+</tr>
+<tr>
+<td>James Van Riemsdyk</td>
+<td>0.65</td>
+</tr>
+<tr>
+<td>Jordan Staal</td>
+<td>0.56</td>
+</tr>
+</tbody>
+</table>
+<p>We see that besides Malkin, the majority of of #1 draft picks having significantly more points per game than #2 overall draft picks.</p>
+<p>Finally, to smooth out the randomness of the normalized expected points per game I am going to fit a polynomial regression to the data.  I am using a polynomial regression due to the relationship not being linear.<br>
+<img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/Value_of_Draft_Pick/all_picks1.png" alt="./images/Value_of_Draft_Pick/all_picks1.png"></p>
+<p>We see that the line smooths out some of the randomness, however we still see a little randomness at the end.  As I expand the search this will smooth out.  Now lets only look at only the first round.  This model gives me a $$R^2$$ of 0.77.<br>
+<img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/Value_of_Draft_Pick/first_round.png" alt="./images/Value_of_Draft_Pick/first_round.png"></p>
+<p>We see after the first overall selection, the expected normalized points is consistent.  Here are the ratings for the first 30 selections<br></p>
+<table>
+<thead>
+<tr>
+<th>Pick</th>
+<th>Value</th>
+<th>Pick</th>
+<th>Value</th>
+<th>Pick</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>15.94</td>
+<td>11</td>
+<td>5.28</td>
+<td>21</td>
+<td>3.42</td>
+</tr>
+<tr>
+<td>2</td>
+<td>7.92</td>
+<td>12</td>
+<td>5.04</td>
+<td>22</td>
+<td>3.28</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7.57</td>
+<td>13</td>
+<td>4.82</td>
+<td>23</td>
+<td>3.15</td>
+</tr>
+<tr>
+<td>4</td>
+<td>7.24</td>
+<td>14</td>
+<td>4.62</td>
+<td>24</td>
+<td>3.03</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6.92</td>
+<td>15</td>
+<td>4.42</td>
+<td>25</td>
+<td>2.91</td>
+</tr>
+<tr>
+<td>6</td>
+<td>6.61</td>
+<td>16</td>
+<td>4.23</td>
+<td>26</td>
+<td>2.80</td>
+</tr>
+<tr>
+<td>7</td>
+<td>6.04</td>
+<td>17</td>
+<td>4.05</td>
+<td>27</td>
+<td>2.70</td>
+</tr>
+<tr>
+<td>8</td>
+<td>6.04</td>
+<td>18</td>
+<td>3.88</td>
+<td>28</td>
+<td>2.61</td>
+</tr>
+<tr>
+<td>9</td>
+<td>5.77</td>
+<td>19</td>
+<td>3.71</td>
+<td>29</td>
+<td>2.52</td>
+</tr>
+<tr>
+<td>10</td>
+<td>5.52</td>
+<td>20</td>
+<td>3.56</td>
+<td>30</td>
+<td>2.43</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-takeaways">Key Takeaways</h3>
+<p>The number one overall pick is worth a lot and is probably being undervalued.  If you have the means to trade for this pick, you should do it.</p>
 
   </main>
+  <div id="disqus-container">
+  
+    <button id="disqus-button" onclick="showComments()">Show comments</button>
+    <div id="disqus-comments">
+      
+      
+      
+        <p><em>Disqus comments are disabled.</em></p>
+        <script type="application/javascript">
+          function showComments() {
+            // Remove button
+var disqusButton = document.getElementById('disqus-button');
+disqusButton.parentNode.removeChild(disqusButton); 
+// Un-hide comments
+var disqusComments = document.getElementById('disqus-comments');
+disqusComments.style.display = 'block'; 
+          }
+        </script>
+      
+      <noscript>Enable JavaScript to view Disqus comments.</noscript>
+    </div>
+  
+</div>
+
 
           <footer role="contentinfo">
   <div>

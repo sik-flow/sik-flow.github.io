@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Cupper</title>
+    <link>https://example.com/</link>
+    <description>Recent content in Home on Cupper</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 26 Jun 2017 18:27:58 +0100</lastBuildDate>
+    
+	<atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Partial Dependency Plots</title>
+      <link>https://example.com/pdp/</link>
+      <pubDate>Sat, 06 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/pdp/</guid>
+      <description>Partial Dependency Plots are a technique for showing the effect of a feature as it changes. I highly recommend taking a look at this tweet as a reference for how they are calculated.
+I am going to show an example of this using the Titanic Dataset.
+import pandas as pd # load in dataset from github link url = &#39;https://raw.githubusercontent.com/agconti/kaggle-titanic/master/data/train.csv&#39; df = pd.read_csv(url) # minor data cleaning # convert sex column to binary df[&#39;Sex&#39;] = df[&#39;Sex&#39;].</description>
+    </item>
+    
+    <item>
+      <title>Interpret Linear Regression</title>
+      <link>https://example.com/linear_regression_inter/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/linear_regression_inter/</guid>
+      <description>Linear Regression has the reputation of being one of the easiest machine learning models to interpret. A visualization I have always really liked is the following: Source
+We see that linear regression is at the top left where it is a model that is very interpretable, but does not provide much in the way of accuracy. If we are going to use linear regression for what it is the absolute best at, then we should be able to fully take advantage of the interpretability that it has.</description>
+    </item>
+    
+    <item>
+      <title>How much is a NHL Draft Pick Worth?</title>
+      <link>https://example.com/value_of_draft_pick/</link>
+      <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/value_of_draft_pick/</guid>
+      <description>The NFL has a famous chart for quantitatively assigning a value to a draft pick (NFL Draft Pick Chart). Could something similar be made for hockey to assign values to NHL draft picks?
+The Data I scraped data NHL draft data from the 2000 draft to the 2010 draft from Elite Prospects. I collected player statistics from 2,741 players that were drafted during this time. To normalize the data, I only grabbed players that were drafted in the first 210 picks, as the 2010 draft only had 7 rounds and previous drafts had more rounds.</description>
+    </item>
+    
+    <item>
+      <title>SVMs - Part II (Application)</title>
+      <link>https://example.com/svms_part_2/</link>
+      <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/svms_part_2/</guid>
+      <description>Now that we have the theory of Support Vector Machines, I am now going to code a Support Vector Machine from Scratch. First, I am going to start with some data.
+import cvxpy as cp import pandas as pd import matplotlib.pyplot as plt from sklearn.datasets import make_blobs import numpy as np  # create dataset data, labels = make_blobs(n_features=2, centers=2, cluster_std=1.25, random_state=11, n_samples = 10) df = pd.DataFrame({&#39;Credit Score&#39;: data[:, 0], &#39;Income&#39;: data[:, 1], &#39;Target&#39;: labels}) with plt.</description>
+    </item>
+    
+    <item>
+      <title>SVMs - Part I (Theory)</title>
+      <link>https://example.com/svms_part_1/</link>
+      <pubDate>Tue, 21 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/svms_part_1/</guid>
+      <description>Support Vector Machines have always been one of the algorithms that I have struggled with. I recently took the course Introduction to Analytics Modeling from Georgia Tech through EdX and these are my notes for Support Vector Machines.
+I am going to start with creating some data.
+from sklearn.datasets import make_blobs import matplotlib.pyplot as plt import pandas as pd # create dataset data, labels = make_blobs(n_features=2, centers=2, cluster_std=1.25, random_state=11, n_samples = 10) df = pd.</description>
+    </item>
+    
+    <item>
+      <title>Jack Hughes Rookie Year - Should we be Concerned?</title>
+      <link>https://example.com/jack_hughes/</link>
+      <pubDate>Sat, 18 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/jack_hughes/</guid>
+      <description>Jack Hughes was recently the number one overall pick in the 2019 NHL draft. Jack Hughes came into the NHL with a lot of hype after average 2 points per game in the USHL and scoring 20 points in 7 games in the U18 World Championships. Jack Hughes got drafted by the New Jersey Devils and did not score at the rate his hype was predicting). In this post I am going to analyze if we should be concerned about Jack Hughes?</description>
+    </item>
+    
+    <item>
+      <title>Random Search vs Linear Search vs Binary Search</title>
+      <link>https://example.com/search_algorithms/</link>
+      <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/search_algorithms/</guid>
+      <description>I recently read through this wonderful tutorial from Real Python: tutorial and was inspired to write a bit about it. I feel that for me going through a tutorial and then writing a blog post really makes me learn a topic a little more.
+Start with loading in a dataset.
+def load_names(path): with open(path) as text_file: return text_file.read().splitlines() sorted_names = load_names(&#39;sorted_names.txt&#39;)  sorted_names[:10]  [&amp;quot;!&#39;aru Ikhuisi Piet Berendse&amp;quot;, &#39;!Gubi Tietie&#39;, &#39;!</description>
+    </item>
+    
+    <item>
+      <title>Exploring Presidential Candidate Funding</title>
+      <link>https://example.com/president_candidate_funding/</link>
+      <pubDate>Thu, 31 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/president_candidate_funding/</guid>
+      <description>I recently came across this dataset from the FEC that had presidental candidate funding. I downloaded funding from Bernie Sanders, Joe Biden, and Elizabeth Warren. After downloading the dataset I first wanted to see how much each of the candidates had raised in 2019.
+Year to date - Bernie has raised slightly more money than Warren, with Biden in third place overall. Bernie has made it a point in the past to make it be known that his supporters donate less on average than other candidates.</description>
+    </item>
+    
+    <item>
+      <title>Who Makes More Money - Monte Carlo Simulation?</title>
+      <link>https://example.com/monte_carlo/</link>
+      <pubDate>Sat, 26 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/monte_carlo/</guid>
+      <description>I recently came across the following PDF University of Missouri Employee Salaries. This PDF contains salary information for over 20,000 University of Missouri employees. I wanted to see if I could accomplish the following:
+ Parse the PDF into a format that I could analyze using Python Using each employees first name and/or middle name, make a &amp;ldquo;guess&amp;rdquo; on their gender Use a statistical test to determine whether a certain gender makes more money on average  Part 1: Parsing the PDF I used the following notebook to parse the PDF, Parse PDF.</description>
+    </item>
+    
+    <item>
+      <title>Most Important Event at Crossfit Open</title>
+      <link>https://example.com/crossfit_open/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/crossfit_open/</guid>
+      <description>Background The CrossFit Open takes place every year as the first qualifying stage of the CrossFit Games (which is used to determine the &amp;ldquo;Fittest on Earth). The athletes that finish in the top 20 in the world automatically qualify for the CrossFit Games. The CrossFit Open consists of 5 unique workouts (see workouts here) and your overall CrossFit Open score consists of how you finished on all 5 workouts (see leaderboard here).</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://example.com/about/</link>
+      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/about/</guid>
+      <description>Jeff Herman is a data scientist instructor at a online bootcamp. Jeff previously was a data scientist in the transportation industry and has taught data science at 3 previous data science bootcamps. He holds a Bachelor of Science in Mechanical Engineering from the University of Missouri and is pursuing a Master of Science in Analytics from Georgia Tech. His interest in data analytics began after completing a series of MOOCs on the subject.</description>
+    </item>
+    
+  </channel>
+</rss>

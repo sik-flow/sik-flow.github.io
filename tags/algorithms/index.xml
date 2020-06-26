@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>algorithms on Cupper</title>
+    <link>https://example.com/tags/algorithms/</link>
+    <description>Recent content in algorithms on Cupper</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/algorithms/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Random Search vs Linear Search vs Binary Search</title>
+      <link>https://example.com/search_algorithms/</link>
+      <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/search_algorithms/</guid>
+      <description>I recently read through this wonderful tutorial from Real Python: tutorial and was inspired to write a bit about it. I feel that for me going through a tutorial and then writing a blog post really makes me learn a topic a little more.
+Start with loading in a dataset.
+def load_names(path): with open(path) as text_file: return text_file.read().splitlines() sorted_names = load_names(&#39;sorted_names.txt&#39;)  sorted_names[:10]  [&amp;quot;!&#39;aru Ikhuisi Piet Berendse&amp;quot;, &#39;!Gubi Tietie&#39;, &#39;!</description>
+    </item>
+    
+  </channel>
+</rss>

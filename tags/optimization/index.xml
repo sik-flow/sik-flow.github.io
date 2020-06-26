@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>optimization on Cupper</title>
+    <link>https://example.com/tags/optimization/</link>
+    <description>Recent content in optimization on Cupper</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/optimization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SVMs - Part II (Application)</title>
+      <link>https://example.com/svms_part_2/</link>
+      <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/svms_part_2/</guid>
+      <description>Now that we have the theory of Support Vector Machines, I am now going to code a Support Vector Machine from Scratch. First, I am going to start with some data.
+import cvxpy as cp import pandas as pd import matplotlib.pyplot as plt from sklearn.datasets import make_blobs import numpy as np  # create dataset data, labels = make_blobs(n_features=2, centers=2, cluster_std=1.25, random_state=11, n_samples = 10) df = pd.DataFrame({&#39;Credit Score&#39;: data[:, 0], &#39;Income&#39;: data[:, 1], &#39;Target&#39;: labels}) with plt.</description>
+    </item>
+    
+  </channel>
+</rss>

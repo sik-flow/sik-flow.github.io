@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>monte-carlo on Cupper</title>
+    <link>https://example.com/tags/monte-carlo/</link>
+    <description>Recent content in monte-carlo on Cupper</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/monte-carlo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Who Makes More Money - Monte Carlo Simulation?</title>
+      <link>https://example.com/monte_carlo/</link>
+      <pubDate>Sat, 26 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/monte_carlo/</guid>
+      <description>I recently came across the following PDF University of Missouri Employee Salaries. This PDF contains salary information for over 20,000 University of Missouri employees. I wanted to see if I could accomplish the following:
+ Parse the PDF into a format that I could analyze using Python Using each employees first name and/or middle name, make a &amp;ldquo;guess&amp;rdquo; on their gender Use a statistical test to determine whether a certain gender makes more money on average  Part 1: Parsing the PDF I used the following notebook to parse the PDF, Parse PDF.</description>
+    </item>
+    
+  </channel>
+</rss>

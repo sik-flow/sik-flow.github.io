@@ -6,12 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.72.0" />
-  <link rel="canonical" href="https://example.com/">
+  <link rel="canonical" href="https://example.com/linear_regression_inter/">
 
-  
-    
-      <meta name="description" content="Data science ramblings and notes">
-    
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -38,9 +34,7 @@
 
   
   
-    
-  
-  <title>Cupper</title>
+  <title>Interpret Linear Regression | Cupper</title>
 </head>
 
   <body>
@@ -165,7 +159,7 @@
       
       
       
-      <a href="/" aria-current="page">
+      <a href="/" >
         <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
           <use xlink:href="#bookmark"></use>
         </svg>
@@ -178,7 +172,7 @@
       
       
       
-      <a href="/post/" >
+      <a href="/post/" aria-current="page">
         <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
           <use xlink:href="#bookmark"></use>
         </svg>
@@ -234,11 +228,257 @@
         <div>
           
   <main id="main">
-    <h1>Home</h1>
-    <p><img src="/images/jeff_herman.jpg" alt="Jeff Herman" width="300" height="400" /></p>
-<p>Jeff Herman is a data scientist instructor at a online bootcamp. Jeff is using this site as a way to organize his data science notes.</p>
+    <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      Interpret Linear Regression
+    </h1>
+
+    <div class="date">
+      
+      
+      <strong>Publish date: </strong>May 24, 2020
+      
+        
+      
+    </div>
+
+    
+      <div class="tags">
+        <strong>Tags: </strong>
+        <ul aria-label="tags">
+          
+            <li>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use xlink:href="#tag"></use>
+              </svg>
+              
+              <a href="https://example.com/tags/interpretability/">interpretability</a>
+            </li>
+          
+            <li>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use xlink:href="#tag"></use>
+              </svg>
+              
+              <a href="https://example.com/tags/linear-regression/">linear-regression</a>
+            </li>
+          
+        </ul>
+      </div>
+    
+    
+    
+      
+
+  <nav class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#interpret-categorical-feature">
+            Interpret Categorical Feature
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#interpret-continuous-feature">
+            Interpret Continuous Feature
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#feature-importance">
+            Feature Importance
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#weight-plot">
+            Weight Plot
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#effect-plot">
+            Effect Plot
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#effect-plot-with-individual-prediction">
+            Effect Plot with Individual Prediction
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#log-transformed-features">
+            Log Transformed Features
+          </a>
+        </li>
+      
+        <li>
+          
+          
+          
+          
+          <a href="#references">
+            References
+          </a>
+        </li>
+      
+    </ol>
+  </nav>
+
+
+    
+
+    <p>Linear Regression has the reputation of being one of the easiest machine learning models to interpret.  A visualization I have always really liked is the following:
+<img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/linear_regression_interp/interp_vs_accuracy.png" alt="interp_vs_accuracy.png">
+<a href="https://www.researchgate.net/figure/nterpretability-accuracy-tradeoff-in-classification-algorithms-of-machine-learning_fig2_332409898">Source</a></p>
+<p>We see that linear regression is at the top left where it is a model that is very interpretable, but does not provide much in the way of accuracy.  If we are going to use linear regression for what it is the absolute best at, then we should be able to fully take advantage of the interpretability that it has.</p>
+<p>For this post I am going to be demonstrating the interpretability of linear regression using the Bike Sharing Data Set from the <a href="http://archive.ics.uci.edu/ml/datasets/Bike+Sharing+Dataset">UCI Machine Learning Repository</a>.</p>
+<p>To start I am going to be predicting the number of rental bikes for specific day (<code>cnt</code> in the dataset).  I will be using the following features to do that:</p>
+<ul>
+<li><code>season</code> - summer, fall, winter, spring (categorical)</li>
+<li><code>holiday</code> - 1 if holiday, 0 if not (categorical)</li>
+<li><code>workingday</code> - 1 if day is neither weekend or holiday, 0 otherwise (categorical)</li>
+<li><code>weathersit</code> - 1: clear, 2: misty, 3: light snow/light rain/thunderstorm, 4: heavy rain/ice (categorical)</li>
+<li><code>temp</code> - temperature (numeric)</li>
+<li><code>hum</code> - humidity (numeric)</li>
+<li><code>windspeed</code> - speed of wind (numeric)</li>
+<li><code>days_since_2011</code> - number of days since first day; used to handle trend in the data (numeric)</li>
+</ul>
+<p>After fitting my model I got the following summary table from statsmodels:
+<img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/linear_regression_interp/summary.png" alt="summary.png"></p>
+<h2 id="interpret-categorical-feature">Interpret Categorical Feature</h2>
+<p>This table has a lot of really good information.  Lets start interpretting what some of the coefficients mean.  To start I am going to look at the coefficient for <code>summer</code>.  <code>summer</code> is a dummy variable for the season category.  I see that I have dummy variables for <code>summer</code>, <code>fall</code>, and <code>winter</code>.  I do not have a dummy variable for <code>spring</code> this is incorporated into the intercept.  The coefficient for <code>summer</code> is 761.1, this tells me that when the season is summer I expect to see 761 less bikes rented than spring.  Which intuitively makes sense because summer typically has hotter weather and people will be less inclined to ride a bike during this period.  We see that of the 4 seasons the base case <code>spring</code> captured in the intercept has the highest value, followed by <code>fall</code>.  This again makes sense because spring and fall typically have nicer weather and people will be more inclined to ride a bike during these times.</p>
+<h2 id="interpret-continuous-feature">Interpret Continuous Feature</h2>
+<p>Now I am going to look at the <code>hum</code> feature.  The <code>hum</code> feature has a coefficient of -17.37 (as a reminder <code>hum</code> is the coefficient for humidity).  This lets us know that when the humidity increases by 1 we would expect the number of people to rent bikes to decrease by -17.</p>
+<p>I typically see this table as the only part of the interpretability that is presented on linear regression.  I am now going to show 4 plots that can better show the results of your model after performing linear regression.  To start with we have feature importance.  Finally I will show how to interpret log transformed features.</p>
+<h2 id="feature-importance">Feature Importance</h2>
+<p>We can determine the most important feature by looking at the absolute value of the T-Statistic.  The T-Statistic can be calculated by dividing the coefficient by the standard error.</p>
+<p>$$T = \frac{\beta_i}{SE(\beta_i)}$$</p>
+<p>Looking at the feature importance for this particular problem, we get the following feature importances:</p>
+<p><img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/linear_regression_interp/feature_importance.png" alt="feature_importance.png"></p>
+<p>We see that <code>days_since_2011</code> is the most important feature.  This implies that as time has gone on, more people have rented bikes (there is an upward trend in this data).  Next we see that temperature is the next most important feature.</p>
+<p>This plot is much easier to identify what the most important feature are versus showing the summary plot.  Next I am going to look at a weight plot.</p>
+<h2 id="weight-plot">Weight Plot</h2>
+<p>A weight plot is a way to visualize the different coefficients and their confidence intervals.  The weight plot for this problem is the following:
+<img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/linear_regression_interp/weight_estimate.png" alt="weight_estimate.png"></p>
+<p>This how each feature impacts the model.  When the weather is rain/snow/storm this has a large negative impact on number of bikes rented.  While working day and temperature both have positive effects on the number of bikes purchased.</p>
+<p>The Weight Plot does not take into consideration the scale of the data, which the next plot does.</p>
+<h2 id="effect-plot">Effect Plot</h2>
+<p>The Effect Plot multiplies the coefficient weight by each data point and then plots the range of values.  This shows you the range of weights and values contribute to the prediction.  The weight plot for this problem is the following:
+<img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/linear_regression_interp/feature_effects.png" alt="feature_effects.png"></p>
+<p>This shows that temperature and days since 2011 have the biggest effect on the prediction.  We that the categorical feature weather can have a strong negative effect, a small negative effect, or no effect depending on the weather.  Looking at the weight plot from earlier we saw that working day had the largest coefficient, but has a very small effect on the overall model.</p>
+<h2 id="effect-plot-with-individual-prediction">Effect Plot with Individual Prediction</h2>
+<p>An effect plot can also be used to show an individual prediction.  I have the following day:</p>
+<ul>
+<li>weather: clear</li>
+<li>season: fall</li>
+<li>wind speed: 11.83</li>
+<li>humidity: 62.38</li>
+<li>days since 2011: 302</li>
+<li>temperature: 7.00</li>
+<li>working day: 0</li>
+</ul>
+<p>Using an effect plot I can see how individual effects compare with the distribution of effects from earlier.<br>
+<img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/linear_regression_interp/effect_indvs.png" alt="effect_indv.png"></p>
+<p>The red <code>x</code> are where the individual point fit on each distribution.  We see that the temperature is below the median and the humidity is about at the median.</p>
+<h2 id="log-transformed-features">Log Transformed Features</h2>
+<h4 id="log-lin-model">Log-Lin Model</h4>
+<p>A log-lin model is a model where the dependent variable has been log transformed (note these interpretations are assuming the natural log has been performed) and the independent variable has not been transformed.  Say we have the following model:</p>
+<p>$$\log(cnt) = 7.65 + 0.04*temp$$</p>
+<p>This would mean that when the temperature increased by 1 unit the count of bikes rented increases by:<br><br>
+$$e^{0.04}$$</p>
+<pre><code class="language-python">import numpy as np
+np.exp(0.04)
+</code></pre>
+<pre><code>1.0408107741923882
+</code></pre>
+<p>This means that when the temperature increases by 1 unit the count increases by 4%.  You will also commonly see this interpreted as multiplying the coefficient by 100 - however this is has a little error involved in the calculation due to rounding.</p>
+<h4 id="lin-log-model">Lin-Log Model</h4>
+<p>A lin-log model is a model where the independent variable has been log transformed and the dependent variable has not been transformed.  Say we have the following model:</p>
+<p>$$cnt = 875.95 + 1462.62*\log(temp)$$</p>
+<p>To interpret the temperature feature I would do the following.  If I wanted to see what a 1% increase in temperature would do to the count of bikes rented:</p>
+<p>$$\log(1.01)*1462.62$$</p>
+<pre><code class="language-python">np.log(1.01)*1462.62
+</code></pre>
+<pre><code>14.553552912460713
+</code></pre>
+<p>This means that when the temperature increases by 1% the count in the number of bikes rented increases by 14.55.  You will also commonly see this interpreted as dividing the coefficient by 100.</p>
+<h4 id="log-log-model">Log-Log Model</h4>
+<p>A log-log model is a model where both the independent and dependent variable have been log transformed.  Say we have the following model:</p>
+<p>$$\log(cnt) = 7.21 + 0.42*\log(temp)$$</p>
+<p>This can be interpreted as
+$$1.01^{0.42}$$</p>
+<pre><code class="language-python">1.01**0.42
+</code></pre>
+<pre><code>1.0041878837371854
+</code></pre>
+<p>A 1% increase in temperature would increase the number of bikes rented by 0.4%.</p>
+<h2 id="references">References</h2>
+<p>I used the following references very heavily in this post</p>
+<ul>
+<li><a href="https://christophm.github.io/interpretable-ml-book/limo.html">https://christophm.github.io/interpretable-ml-book/limo.html</a></li>
+<li><a href="https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqhow-do-i-interpret-a-regression-model-when-some-variables-are-log-transformed/">https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqhow-do-i-interpret-a-regression-model-when-some-variables-are-log-transformed/</a></li>
+</ul>
 
   </main>
+  <div id="disqus-container">
+  
+    <button id="disqus-button" onclick="showComments()">Show comments</button>
+    <div id="disqus-comments">
+      
+      
+      
+        <p><em>Disqus comments are disabled.</em></p>
+        <script type="application/javascript">
+          function showComments() {
+            // Remove button
+var disqusButton = document.getElementById('disqus-button');
+disqusButton.parentNode.removeChild(disqusButton); 
+// Un-hide comments
+var disqusComments = document.getElementById('disqus-comments');
+disqusComments.style.display = 'block'; 
+          }
+        </script>
+      
+      <noscript>Enable JavaScript to view Disqus comments.</noscript>
+    </div>
+  
+</div>
+
 
           <footer role="contentinfo">
   <div>

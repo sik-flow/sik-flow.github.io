@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linear-regression on Cupper</title>
+    <link>https://example.com/tags/linear-regression/</link>
+    <description>Recent content in linear-regression on Cupper</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/linear-regression/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Interpret Linear Regression</title>
+      <link>https://example.com/linear_regression_inter/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/linear_regression_inter/</guid>
+      <description>Linear Regression has the reputation of being one of the easiest machine learning models to interpret. A visualization I have always really liked is the following: Source
+We see that linear regression is at the top left where it is a model that is very interpretable, but does not provide much in the way of accuracy. If we are going to use linear regression for what it is the absolute best at, then we should be able to fully take advantage of the interpretability that it has.</description>
+    </item>
+    
+  </channel>
+</rss>

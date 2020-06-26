@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>interpretability on Cupper</title>
+    <link>https://example.com/tags/interpretability/</link>
+    <description>Recent content in interpretability on Cupper</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/interpretability/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Partial Dependency Plots</title>
+      <link>https://example.com/pdp/</link>
+      <pubDate>Sat, 06 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/pdp/</guid>
+      <description>Partial Dependency Plots are a technique for showing the effect of a feature as it changes. I highly recommend taking a look at this tweet as a reference for how they are calculated.
+I am going to show an example of this using the Titanic Dataset.
+import pandas as pd # load in dataset from github link url = &#39;https://raw.githubusercontent.com/agconti/kaggle-titanic/master/data/train.csv&#39; df = pd.read_csv(url) # minor data cleaning # convert sex column to binary df[&#39;Sex&#39;] = df[&#39;Sex&#39;].</description>
+    </item>
+    
+    <item>
+      <title>Interpret Linear Regression</title>
+      <link>https://example.com/linear_regression_inter/</link>
+      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/linear_regression_inter/</guid>
+      <description>Linear Regression has the reputation of being one of the easiest machine learning models to interpret. A visualization I have always really liked is the following: Source
+We see that linear regression is at the top left where it is a model that is very interpretable, but does not provide much in the way of accuracy. If we are going to use linear regression for what it is the absolute best at, then we should be able to fully take advantage of the interpretability that it has.</description>
+    </item>
+    
+    <item>
+      <title>Most Important Event at Crossfit Open</title>
+      <link>https://example.com/crossfit_open/</link>
+      <pubDate>Tue, 27 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/crossfit_open/</guid>
+      <description>Background The CrossFit Open takes place every year as the first qualifying stage of the CrossFit Games (which is used to determine the &amp;ldquo;Fittest on Earth). The athletes that finish in the top 20 in the world automatically qualify for the CrossFit Games. The CrossFit Open consists of 5 unique workouts (see workouts here) and your overall CrossFit Open score consists of how you finished on all 5 workouts (see leaderboard here).</description>
+    </item>
+    
+  </channel>
+</rss>

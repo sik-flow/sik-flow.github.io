@@ -6,12 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.72.0" />
-  <link rel="canonical" href="https://example.com/">
+  <link rel="canonical" href="https://example.com/crossfit_open/">
 
-  
-    
-      <meta name="description" content="Data science ramblings and notes">
-    
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -38,9 +34,7 @@
 
   
   
-    
-  
-  <title>Cupper</title>
+  <title>Most Important Event at Crossfit Open | Cupper</title>
 </head>
 
   <body>
@@ -165,7 +159,7 @@
       
       
       
-      <a href="/" aria-current="page">
+      <a href="/" >
         <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
           <use xlink:href="#bookmark"></use>
         </svg>
@@ -178,7 +172,7 @@
       
       
       
-      <a href="/post/" >
+      <a href="/post/" aria-current="page">
         <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
           <use xlink:href="#bookmark"></use>
         </svg>
@@ -234,11 +228,104 @@
         <div>
           
   <main id="main">
-    <h1>Home</h1>
-    <p><img src="/images/jeff_herman.jpg" alt="Jeff Herman" width="300" height="400" /></p>
-<p>Jeff Herman is a data scientist instructor at a online bootcamp. Jeff is using this site as a way to organize his data science notes.</p>
+    <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      Most Important Event at Crossfit Open
+    </h1>
+
+    <div class="date">
+      
+      
+      <strong>Publish date: </strong>Aug 27, 2019
+      
+        
+      
+    </div>
+
+    
+      <div class="tags">
+        <strong>Tags: </strong>
+        <ul aria-label="tags">
+          
+            <li>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use xlink:href="#tag"></use>
+              </svg>
+              
+              <a href="https://example.com/tags/sports-analytics/">sports-analytics</a>
+            </li>
+          
+            <li>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use xlink:href="#tag"></use>
+              </svg>
+              
+              <a href="https://example.com/tags/interpretability/">interpretability</a>
+            </li>
+          
+        </ul>
+      </div>
+    
+    
+    
+      
+
+
+    
+
+    <h3 id="background">Background</h3>
+<p>The CrossFit Open takes place every year as the first qualifying stage of the CrossFit Games (which is used to determine the &ldquo;Fittest on Earth).  The athletes that finish in the top 20 in the world automatically qualify for the CrossFit Games.  The CrossFit Open consists of 5 unique workouts (see workouts <a href="https://games.crossfit.com/workouts/open/2019">here</a>) and your overall CrossFit Open score consists of how you finished on all 5 workouts (see leaderboard <a href="https://games.crossfit.com/leaderboard/open/2019?view=0&amp;division=1&amp;scaled=0&amp;sort=0">here</a>).</p>
+<h3 id="problem">Problem</h3>
+<p>Which of the 5 events had the most impact on the overall leaderboard? Note this analysis is initially just for male athletes I will be doing female athletes next and comparing the results.</p>
+<h3 id="analysis">Analysis</h3>
+<p>I started by scraping the scores from the top 500 male athletes (by overall finish) from the CrossFit Open leaderboard and ended up with the following Pandas DataFrame:</p>
+<p><img src="https://raw.githubusercontent.com/sik-flow/Crossfit_Scrape/master/Images/df.png" alt="https://raw.githubusercontent.com/sik-flow/Crossfit_Scrape/master/Images/df.png"></p>
+<p>I am interested in the following features:</p>
+<ul>
+<li>Rank - Overall Rank athlete finished in the CrossFit Open (lower is better)</li>
+<li>Score_1 - Overall Rank athlete finished in the first workout (lower is better).  Event 1 will also be called 19.1</li>
+<li>Score_2 - Overall Rank athlete finished in the second workout (lower is better).  Event 2 will also be called 19.2</li>
+<li>Score_3 - Overall Rank athlete finished in the third workout (lower is better).  Event 3 will also be called 19.3</li>
+<li>Score_4 - Overall Rank athlete finished in the fourth workout (lower is better).  Event 4 will also be called 19.4</li>
+<li>Score_5 - Overall Rank athlete finished in the fifth workout (lower is better).  Event 4 will also be called 19.5</li>
+</ul>
+<p>Initially, I made scatter plots of each event vs the overall rank to see if there were any obvious trends.</p>
+<p><img src="https://raw.githubusercontent.com/sik-flow/Crossfit_Scrape/master/Images/scrape.png" alt="https://raw.githubusercontent.com/sik-flow/Crossfit_Scrape/master/Images/scrape.png"></p>
+<p>All the scatter plots look really similar, so similar that I had to double check my code to make sure I wasn&rsquo;t using the same data for each subplot.  Let&rsquo;s look at the Pearson correlation coefficient to see if there is any difference in the relationship between the different workouts and the overall rank.</p>
+<p><img src="https://raw.githubusercontent.com/sik-flow/Crossfit_Scrape/master/Images/correlation.png" alt="https://raw.githubusercontent.com/sik-flow/Crossfit_Scrape/master/Images/correlation.png"></p>
+<p>All of the correlation coefficients are really similar between 0.52 and 0.55.  Next I want to try permutation importance to see if that can better determine which is the most important workout.  Permutation measures how much a score changes when a feature is no longer available.</p>
+<p><img src="https://raw.githubusercontent.com/sik-flow/Crossfit_Scrape/master/Images/permutation_importance.png" alt="https://raw.githubusercontent.com/sik-flow/Crossfit_Scrape/master/Images/permutation_importance.png"></p>
+<p>This shows that after multiple shuffles the $$R^2$$ for 19.3 changed on average 0.35, while the average $$R^2$$ for 19.4 only changed 0.06.  This means that the event 19.3 had a big impact on predicting their overall score, while 19.4 did not have much of an impact on predicting their overall score.  This could be caused by a lot of different factors - my guess is that 19.3 was a workout that was a &ldquo;seperator&rdquo;.  In that if you score badly on 19.3, you are going to do badly overall relatively.</p>
+<h3 id="next-steps">Next Steps</h3>
+<p>I next want to perform the same analysis on the female athletes and see if the results match up or not.</p>
 
   </main>
+  <div id="disqus-container">
+  
+    <button id="disqus-button" onclick="showComments()">Show comments</button>
+    <div id="disqus-comments">
+      
+      
+      
+        <p><em>Disqus comments are disabled.</em></p>
+        <script type="application/javascript">
+          function showComments() {
+            // Remove button
+var disqusButton = document.getElementById('disqus-button');
+disqusButton.parentNode.removeChild(disqusButton); 
+// Un-hide comments
+var disqusComments = document.getElementById('disqus-comments');
+disqusComments.style.display = 'block'; 
+          }
+        </script>
+      
+      <noscript>Enable JavaScript to view Disqus comments.</noscript>
+    </div>
+  
+</div>
+
 
           <footer role="contentinfo">
   <div>

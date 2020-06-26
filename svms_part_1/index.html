@@ -6,12 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <meta name="generator" content="Hugo 0.72.0" />
-  <link rel="canonical" href="https://example.com/">
+  <link rel="canonical" href="https://example.com/svms_part_1/">
 
-  
-    
-      <meta name="description" content="Data science ramblings and notes">
-    
   
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -38,9 +34,7 @@
 
   
   
-    
-  
-  <title>Cupper</title>
+  <title>SVMs - Part I (Theory) | Cupper</title>
 </head>
 
   <body>
@@ -165,7 +159,7 @@
       
       
       
-      <a href="/" aria-current="page">
+      <a href="/" >
         <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
           <use xlink:href="#bookmark"></use>
         </svg>
@@ -178,7 +172,7 @@
       
       
       
-      <a href="/post/" >
+      <a href="/post/" aria-current="page">
         <svg class="bookmark-icon" aria-hidden="true" focusable="false" viewBox="0 0 40 50">
           <use xlink:href="#bookmark"></use>
         </svg>
@@ -234,11 +228,178 @@
         <div>
           
   <main id="main">
-    <h1>Home</h1>
-    <p><img src="/images/jeff_herman.jpg" alt="Jeff Herman" width="300" height="400" /></p>
-<p>Jeff Herman is a data scientist instructor at a online bootcamp. Jeff is using this site as a way to organize his data science notes.</p>
+    <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      SVMs - Part I (Theory)
+    </h1>
+
+    <div class="date">
+      
+      
+      <strong>Publish date: </strong>Apr 21, 2020
+      
+        
+      
+    </div>
+
+    
+      <div class="tags">
+        <strong>Tags: </strong>
+        <ul aria-label="tags">
+          
+            <li>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use xlink:href="#tag"></use>
+              </svg>
+              
+              <a href="https://example.com/tags/machine-learning/">machine-learning</a>
+            </li>
+          
+            <li>
+              <svg class="tag-icon" aria-hidden="true" viewBox="0 0 177.16535 177.16535" focusable="false">
+                <use xlink:href="#tag"></use>
+              </svg>
+              
+              <a href="https://example.com/tags/svm/">svm</a>
+            </li>
+          
+        </ul>
+      </div>
+    
+    
+    
+      
+
+
+    
+
+    <p>Support Vector Machines have always been one of the algorithms that I have struggled with.  I recently took the course <a href="https://www.edx.org/course/introduction-to-analytics-modeling">Introduction to Analytics Modeling from Georgia Tech through EdX</a> and these are my notes for Support Vector Machines.</p>
+<p>I am going to start with creating some data.</p>
+<pre><code class="language-python">from sklearn.datasets import make_blobs
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# create dataset
+data, labels = make_blobs(n_features=2, centers=2, cluster_std=1.25,  
+                          random_state=11, n_samples = 10)
+df = pd.DataFrame({'Credit Score': data[:, 0], 'Income': data[:, 1], 
+                          'Target': labels})
+
+with plt.style.context('fivethirtyeight'):
+    fig, ax = plt.subplots(figsize = (8, 8))
+    df[df['Target'] == 0].plot(x = 'Credit Score', y = 'Income', color = 'red', 
+                              kind = 'scatter', ax = ax,
+                              s = 100, label = 'default')
+    df[df['Target'] == 1].plot(x = 'Credit Score', y = 'Income', color = 'blue',
+                              kind = 'scatter', ax = ax,
+                              s = 100, label = 'repaid')
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/SVM_Part_1/SVMs_Part_1_2_0.png" alt=""></p>
+<p>I now have some data.  I am going to be trying to predict whether someone will repay their loan or default on their loan based on their credit score and income.  The red dots are people that defaulted on their loand and the blue dots are people that repaid their loans.  I see there is a clear seperation between the 2 classes, how can I figure out what line will best seperate the data.  This is where SVMs will come in hand, but before that I need to declare some variables:</p>
+<ul>
+<li>n = number of data points</li>
+<li>m = number of attributes</li>
+<li>$$x_{ij}$$ = ith attribute of jth data point
+<ul>
+<li>$$x_{1j}$$ = credit score of person j</li>
+<li>$$x_{2j}$$ = income of person j</li>
+</ul>
+</li>
+<li>$$y_j$$ = response of data point j
+<ul>
+<li>$$y_j$$ = 1, if data point is blue (repaid)</li>
+<li>$$y_j$$ = -1, if data point is red (defaulted)</li>
+</ul>
+</li>
+</ul>
+<p>A line is defined by a set of coefficients $$a_1$$ through $$a_m$$ for each attribute and an intercept $$a_0$$ - this can be wrtten as:<br><br>
+$$a_1x_1 + a_2x_2 + &hellip; + a_mx_m +a_0 = 0$$ or<br><br></p>
+<p>\begin{align}
+\sum_{i=0}^m a_ix_i + a_0 = 0
+\end{align}</p>
+<p>Parallel lines are 2 lines that have the same coefficients $$a_1$$ through $$a_m$$ and different intercepts $$a_0$$.  Below I am going to draw 2 parallel lines that seperate the red and blue points.  The line in the middle will be our classifier.</p>
+<p><img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/SVM_Part_1/parallel_lines.png" alt=""></p>
+<p>We are wanting to find values of $$a_0$$, $$a_1$$ up to $$a_m$$ that do 2 things:</p>
+<ol>
+<li>Classify the points on the correct side of the line</li>
+<li>Maximize the gap between the 2 parallel lines</li>
+</ol>
+<p>To classify the points correctly, we need all the blue points to have:<br>
+$$a_1x_{1j} + a_2x_{2j} + &hellip; + a_mx_{mj} + a_0 \geq 1$$</p>
+<p>All red points need to have:<br>
+$$a_1x_{1j} + a_2x_{2j} + &hellip; + a_mx_{mj} + a_0 \leq -1$$</p>
+<p>Since we previously defined $$y_j$$ = 1 for the blue points and $$y_j$$ = -1 for the red points we can combine those 2 formulas and get the following for all points:<br><br>
+$$(a_1x_{1j} + a_2x_{2j} + &hellip; + a_mx_{mj} + a_0)y_j \geq 1$$</p>
+<p>This works because the values that were previously predicted to default (red points) where having values less than -1, now these values are being multiplied by -1 and thus making a positive number.</p>
+<p>The formula for the distance between 2 parallel lines is<br>
+$$=\frac{2}{\sqrt{\sum_i(a_i)^2}}$$</p>
+<p>So, if we can minimize $$\sum_i(a_i)^2$$, then we can maximize the margin.  This is because on the above formula, if we minimize the denominator the number increases and thus the sum increases.</p>
+<p>Our overall formula is:<br><br>
+Minimize $$\sum_i^m(a_i)^2$$<br>
+Subject to $$(a_1x_{1j} + a_2x_{2j} + &hellip; + a_mx_{mj} + a_0)y_j \geq 1$$</p>
+<p>We need to find values of $$a_1$$ through $$a_m$$ that the margin is the greatest.  But we can only choose from among values of the coefficients that correctly seperate all the points.</p>
+<h4 id="soft-classifier">Soft Classifier</h4>
+<p>Imagine a scenario where a line will not meet all of the above standars.  Then I would want to do what is known as a soft classifier.  Lets start with making some data.</p>
+<pre><code class="language-python"># create dataset
+data, labels = make_blobs(n_features=2, centers=2, cluster_std=11,  
+                            random_state=11, n_samples = 10)
+df = pd.DataFrame({'Credit Score': data[:, 0], 'Income': data[:, 1], 
+                            'Target': labels})
+
+with plt.style.context('fivethirtyeight'):
+    fig, ax = plt.subplots(figsize = (8, 8))
+    df[df['Target'] == 0].plot(x = 'Credit Score', y = 'Income', color = 'red',
+                              kind = 'scatter', ax = ax,
+                              s = 100, label = 'default')
+    df[df['Target'] == 1].plot(x = 'Credit Score', y = 'Income', color = 'blue',  
+                              kind = 'scatter', ax = ax,
+                              s = 100, label = 'repaid')
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/SVM_Part_1/SVMs_Part_1_17_0.png" alt=""></p>
+<p>In the above instance, we can not draw a straight line that will seperate the red and blue points without breaking this $$(a_1x_{1j} + a_2x_{2j} + &hellip; + a_mx_{mj} + a_0)y_j \geq 1$$</p>
+<p>If a point is on the correct side of the line it would be the following:<br>
+$$(a_1x_{1j} + a_2x_{2j} + &hellip; + a_mx_{mj} + a_0)y_j \geq 1$$</p>
+<p>However if a point is on the wrong side of the line, it would be the following:<br>
+$$(a_1x_{1j} + a_2x_{2j} + &hellip; + a_mx_{mj} + a_0)y_j - 1 &lt; 0$$</p>
+<p>The amount that a point is less than zero, is the amount of error.  Farther the wrongly classified point is from the line the bigger mistake we have made.  To calculate the error for data point j:<br><br>
+max{0, 1 - $$(\sum_i^m a_ix_{ij} + a_0)y_j$$}</p>
+<p>A data point either is on the correct side of the line (no error) and will have an error that is greater than 1 or if the data point is on the incorrect size and will be below 0, so $$1 - $$ will lead to a positive number.</p>
+<p>The total error can be written as:<br><br>
+$$\sum_{j=1}^n max(0, 1 - (\sum_i^m a_ix_{ij} + a_0)y_j)$$</p>
+<p>From earlier to maximize the margin we use this formula:<br><br>
+$$\sum_i(a_i)^2$$</p>
+<p>To trade off between maximizing the margin and getting values correct we can use the following formula:<br><br>
+$$\sum_{j=1}^n max(0, 1 - (\sum_i^m a_ix_{ij} + a_0)y_j) + \lambda\sum_i^m(a_i)^2$$</p>
+<p>As $$\lambda$$ gets large, this part of the formula - $$\lambda\sum_i^m(a_i)^2$$ - gets large and thus the importance of a large margin outweighs avoiding mistakes.</p>
+<p>As $$\lambda$$ gets closer to 0, this part of the formula - $$\lambda\sum_i^m(a_i)^2$$ - gets close to zero and minimizing mistakes outweighs having a large margin.</p>
 
   </main>
+  <div id="disqus-container">
+  
+    <button id="disqus-button" onclick="showComments()">Show comments</button>
+    <div id="disqus-comments">
+      
+      
+      
+        <p><em>Disqus comments are disabled.</em></p>
+        <script type="application/javascript">
+          function showComments() {
+            // Remove button
+var disqusButton = document.getElementById('disqus-button');
+disqusButton.parentNode.removeChild(disqusButton); 
+// Un-hide comments
+var disqusComments = document.getElementById('disqus-comments');
+disqusComments.style.display = 'block'; 
+          }
+        </script>
+      
+      <noscript>Enable JavaScript to view Disqus comments.</noscript>
+    </div>
+  
+</div>
+
 
           <footer role="contentinfo">
   <div>
