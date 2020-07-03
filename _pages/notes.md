@@ -1,4 +1,4 @@
 ---
-layout: notes
-title: Notes
+layout: note
+title: Note
 ---
