@@ -3,6 +3,17 @@ layout: default
 title: Notes
 ---
 
+<h1>Computer Science</h1>
+{% for project in site.projects reversed %}
+{% if project.category == 'Computer Science' %}
+<article role="article">
+  <h3><a href="{{ site.baseurl }}{{ project.url }}">
+    {{ project.title }}
+  </a></h3>
+</article>
+{% endif %}
+{% endfor %}
+
 <h1>Interpretability</h1>
 {% for project in site.projects reversed %}
 {% if project.category == 'Interpretability' %}
