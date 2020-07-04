@@ -24,3 +24,14 @@ title: Notes
 </article>
 {% endif %}
 {% endfor %}
+
+<h1>Visualization</h1>
+{% for project in site.projects reversed %}
+{% if project.category == 'Visualization' %}
+<article role="article">
+  <h3><a href="{{ site.baseurl }}{{ project.url }}">
+    {{ project.title }}
+  </a></h3>
+</article>
+{% endif %}
+{% endfor %}
