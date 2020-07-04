@@ -2,7 +2,6 @@
 layout: project
 title: "Random Search vs Linear Search vs Binary Search"
 description: Measure Performance of Different Search Algorithms
-summary: Measure Performance of Different Search Algorithms
 category: Computer Science
 ---
 
