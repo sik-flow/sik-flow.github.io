@@ -1,20 +1,3 @@
-# Ultra - Super fast Jekyll theme
+# Sik Flow
 
-Super fast, minimal one-column portfolio/blog theme built for Jekyll. Theme weighs under <strong>2kb</strong>. Perfect for your personal website, blog and portfolio.
-
-### Key features
-
-- seo optimized
-- weighs under 2kb
-- portfolio/blog pages
-- AAA, 100/100 scores on Lighthouse, Gmetrix and Webpagetest
-- responsive
-- inline css
-- compressed css, html
-- sitemap
-- robots.txt
-- atom feed
-
-![Screenshot](ultra.png)
-
-# Demo [here](https://ultra-jekyll.netlify.com/)
+Static site hosting my personal blog and notes.  Full site can be seen at [sikflow.io](sikflow.io).  Site is based on the jekyll theme [ultra](https://github.com/ronv/ultra)
