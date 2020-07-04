@@ -6,11 +6,11 @@ description: How much are different candidates raising?
 
 I recently came across this [dataset from the FEC](https://www.fec.gov/data/) that had presidental candidate funding.  I downloaded funding from Bernie Sanders, Joe Biden, and Elizabeth Warren.  After downloading the dataset I first wanted to see how much each of the candidates had raised in 2019.  
 
-![https://raw.githubusercontent.com/sik-flow/presidential_funding/master/imgs/total_contribs.png](https://raw.githubusercontent.com/sik-flow/presidential_funding/master/imgs/total_contribs.png)
+![https://raw.githubusercontent.com/sik-flow/presidential_funding/master/imgs/total_contribs.png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/presidental_funding/Choropleth_38_1.png)
 
 Year to date - Bernie has raised slightly more money than Warren, with Biden in third place overall.  Bernie has made it a point in the past to make it be known that his supporters donate less on average than other candidates.  Lets see if that is the case with this data. 
 
-![https://raw.githubusercontent.com/sik-flow/presidential_funding/master/imgs/avg_contrib.png](https://raw.githubusercontent.com/sik-flow/presidential_funding/master/imgs/avg_contrib.png)
+![https://raw.githubusercontent.com/sik-flow/presidential_funding/master/imgs/avg_contrib.png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_posts/Images/presidental_funding/Choropleth_41_1.png)
 
 We see that Bernie does in fact have the lowest average donation and Biden has far and away the highest average donation.  Next I want to look at how the donations have changed over time.  
 
