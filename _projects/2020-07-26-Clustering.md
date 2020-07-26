@@ -70,8 +70,3 @@ cbar = fig.colorbar(yep, extend='both')
 
 
 By ordering the data I can quickly see which variables are related to each other.  For example `hue`, `proanthocyanins`, `od280/od315_of_diluted_wines`, `total_phenols` all have negative correlation with `malic_acid`, `alcalinity_of_ash`, `nonflavanoid_phenols`.  We also see that there is a patch of features that are all highly correlated with each other. 
-
-
-```python
-
-```
