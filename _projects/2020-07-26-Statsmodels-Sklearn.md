@@ -101,8 +101,10 @@ import numpy as np
 
 lr = LinearRegression()
 lr.fit(df[['X1', 'X2']], df['Y'])
+```
 
-# Coefficients
+Regression coefficients 
+```python
 lr.coef_
 ```
 
@@ -113,9 +115,8 @@ lr.coef_
 
 
 
-
+Y Intercept 
 ```python
-# Intercept 
 lr.intercept_
 ```
 
@@ -126,9 +127,8 @@ lr.intercept_
 
 
 
-
+Prediction for X1 = 0.5 and X2 = 0.5
 ```python
-# Prediction for X1 = 0.5 and X2 = 0.5
 lr.predict(np.array([.5, .5]).reshape(1, -1))
 ```
 
@@ -139,9 +139,8 @@ lr.predict(np.array([.5, .5]).reshape(1, -1))
 
 
 
-
+R^2
 ```python
-# R^2
 lr.score(df[['X1', 'X2']], df['Y'])
 ```
 
@@ -152,9 +151,8 @@ lr.score(df[['X1', 'X2']], df['Y'])
 
 
 
-
+Adjusted R^2
 ```python
-# Adjusted R^2
 R2 = lr.score(df[['X1', 'X2']], df['Y'])
 n = len(df)
 p = 2
@@ -169,9 +167,8 @@ p = 2
 
 
 
-
+mean squared error 
 ```python
-# mean squared error 
 from sklearn.metrics import mean_squared_error
 mean_squared_error(df['Y'], lr.predict(df[['X1', 'X2']]))
 ```
