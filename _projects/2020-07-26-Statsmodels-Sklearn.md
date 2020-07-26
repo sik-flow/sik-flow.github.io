@@ -363,7 +363,7 @@ model.summary()
 
 The coefficients, intercept, R^2 and adjusted R^2 are all in the summary 
 
-Prediction for X1 = 0.5 and X2 = 0.5
+Prediction for X1 = 0.5 and X2 = 0.5<br>
 Have to add a 1 in the front due to the y intercept 
 ```python
 Xnew = np.column_stack([1, .5, .5])
