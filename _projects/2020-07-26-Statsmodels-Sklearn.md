@@ -256,9 +256,8 @@ model.summary()
 
 The coefficients, intercept, R^2 and adjusted R^2 are all in the summary 
 
-
+Prediction for X1 = 0.5 and X2 = 0.5
 ```python
-# Prediction for X1 = 0.5 and X2 = 0.5
 model.predict(dict(X1 = 0.5, X2 = 0.5))
 ```
 
@@ -270,9 +269,8 @@ model.predict(dict(X1 = 0.5, X2 = 0.5))
 
 
 
-
+mean squared error 
 ```python
-# mean squared error 
 mean_squared_error(df['Y'], model.predict(dict(X1 = df['X1'].values, X2 = df['X2'].values)))
 ```
 
@@ -365,10 +363,9 @@ model.summary()
 
 The coefficients, intercept, R^2 and adjusted R^2 are all in the summary 
 
-
+Prediction for X1 = 0.5 and X2 = 0.5
+Have to add a 1 in the front due to the y intercept 
 ```python
-# Prediction for X1 = 0.5 and X2 = 0.5
-# Have to add a 1 in the front due to the y intercept 
 Xnew = np.column_stack([1, .5, .5])
 model.predict(Xnew)
 ```
@@ -380,9 +377,8 @@ model.predict(Xnew)
 
 
 
-
-```python
 # mean squared error 
+```python
 mean_squared_error(df['Y'], model.predict(X))
 ```
 
