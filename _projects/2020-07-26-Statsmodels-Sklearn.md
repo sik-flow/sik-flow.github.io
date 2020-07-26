@@ -92,7 +92,7 @@ df.head()
 
 
 
-### Sklearn
+# Sklearn
 
 
 ```python
@@ -180,7 +180,7 @@ mean_squared_error(df['Y'], lr.predict(df[['X1', 'X2']]))
 
 
 
-### Statsmodels formula 
+# Statsmodels formula 
 
 
 ```python
@@ -281,7 +281,7 @@ mean_squared_error(df['Y'], model.predict(dict(X1 = df['X1'].values, X2 = df['X2
 
 
 
-### Statsmodels API
+# Statsmodels API
 
 
 ```python
@@ -377,7 +377,7 @@ model.predict(Xnew)
 
 
 
-# mean squared error 
+mean squared error 
 ```python
 mean_squared_error(df['Y'], model.predict(X))
 ```
