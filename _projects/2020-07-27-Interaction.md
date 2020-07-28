@@ -353,4 +353,4 @@ plt.legend()
 ![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Interaction_files/Interaction_11_1.png)
 
 
-Now we see that the the 2 lines have different slopes.  The slope for students is lower than the slope for non-students.  This suggestions that incre
+Now we see that the the 2 lines have different slopes.  The slope for students is lower than the slope for non-students.  This suggestions that increases in income are associated with smaller increases in credit card balance among students as compared to non-students.
