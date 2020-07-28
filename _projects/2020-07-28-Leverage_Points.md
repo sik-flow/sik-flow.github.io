@@ -57,6 +57,8 @@ visualizer = CooksDistance()
 visualizer.fit(df['X'].values.reshape(-1, 1), df['Y'])
 ```
 
+    /Users/jeffreyherman/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/deprecation.py:143: FutureWarning: The sklearn.metrics.classification module is  deprecated in version 0.22 and will be removed in version 0.24. The corresponding classes / functions should instead be imported from sklearn.metrics. Anything that cannot be imported from sklearn.metrics is now part of the private API.
+      warnings.warn(message, FutureWarning)
     /Users/jeffreyherman/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py:213: FutureWarning: From version 0.24, get_params will raise an AttributeError if a parameter cannot be retrieved as an instance attribute. Previously it would return None.
       FutureWarning)
     /Users/jeffreyherman/opt/anaconda3/lib/python3.7/site-packages/yellowbrick/regressor/influence.py:183: UserWarning: In Matplotlib 3.3 individual lines on a stem plot will be added as a LineCollection instead of individual lines. This significantly improves the performance of a stem plot. To remove this warning and switch to the new behaviour, set the "use_line_collection" keyword argument to True.
@@ -66,7 +68,7 @@ visualizer.fit(df['X'].values.reshape(-1, 1), df['Y'])
 
 
 
-    CooksDistance(ax=<matplotlib.axes._subplots.AxesSubplot object at 0x1c317032d0>)
+    CooksDistance(ax=<matplotlib.axes._subplots.AxesSubplot object at 0x1c1f78ba50>)
 
 
 
@@ -161,6 +163,10 @@ model_1 = sm.OLS(Y, X).fit()
 model_1.summary()
 ```
 
+    /Users/jeffreyherman/opt/anaconda3/lib/python3.7/site-packages/statsmodels/tools/_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+      import pandas.util.testing as tm
+
+
 
 
 
@@ -176,10 +182,10 @@ model_1.summary()
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   1246.</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Sun, 26 Jul 2020</td> <th>  Prob (F-statistic):</th> <td>6.87e-58</td>
+  <th>Date:</th>             <td>Tue, 28 Jul 2020</td> <th>  Prob (F-statistic):</th> <td>6.87e-58</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>18:25:28</td>     <th>  Log-Likelihood:    </th> <td> -407.59</td>
+  <th>Time:</th>                 <td>14:56:18</td>     <th>  Log-Likelihood:    </th> <td> -407.59</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>   101</td>      <th>  AIC:               </th> <td>   819.2</td>
@@ -224,13 +230,15 @@ model_1.summary()
 
 
 ```python
-mean_squared_error(df['Y'], model.predict(X))
+from sklearn.metrics import mean_squared_error
+
+mean_squared_error(df['Y'], model_1.predict(X))
 ```
 
 
 
 
-    194.91395168609014
+    187.3842053021652
 
 
 
@@ -261,10 +269,10 @@ model_2.summary()
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   1933.</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Sun, 26 Jul 2020</td> <th>  Prob (F-statistic):</th> <td>2.59e-66</td>
+  <th>Date:</th>             <td>Tue, 28 Jul 2020</td> <th>  Prob (F-statistic):</th> <td>2.59e-66</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>18:25:36</td>     <th>  Log-Likelihood:    </th> <td> -381.98</td>
+  <th>Time:</th>                 <td>14:57:06</td>     <th>  Log-Likelihood:    </th> <td> -381.98</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>   100</td>      <th>  AIC:               </th> <td>   768.0</td>
@@ -309,7 +317,7 @@ model_2.summary()
 
 
 ```python
-mean_squared_error(df.drop(100)['Y'], model.predict(X))
+mean_squared_error(df.drop(100)['Y'], model_2.predict(X))
 ```
 
 
@@ -326,15 +334,15 @@ We see that the first model has a R^2 of 0.926 while the second model has a R^2 
 Xnew = np.array([[1, df['X'].min()], [1, df['X'].max()]])
 plt.scatter(df['X'], df['Y'])
 plt.scatter([3], [70], color = 'red')
-plt.plot([df['X'].min(), df['X'].max()], model_1.predict(Xnew), label = 'With Leverage Point')
-plt.plot([df['X'].min(), df['X'].max()], model_2.predict(Xnew), color = 'red', label = 'Without Leverage Point')
+plt.plot([df['X'].min(), df['X'].max()], model_1.predict(Xnew), label = 'With Leverage Point', color = 'red')
+plt.plot([df['X'].min(), df['X'].max()], model_2.predict(Xnew), label = 'Without Leverage Point')
 plt.legend()
 ```
 
 
 
 
-    <matplotlib.legend.Legend at 0x1c330f3910>
+    <matplotlib.legend.Legend at 0x1c2d5a9610>
 
 
 
