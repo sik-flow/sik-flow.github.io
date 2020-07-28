@@ -1,4 +1,9 @@
-
+---
+layout: project
+title: Interaction Terms Example
+description: Example of how interaction terms work
+category: Linear Regression
+---
 Below I am going to show the impact of making an interaction term.  
 
 I am going to begin my loading in the credit dataset 
