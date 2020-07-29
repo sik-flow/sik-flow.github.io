@@ -108,4 +108,4 @@ fig.text(0.51, 0.05, 'K-Value', ha='center', fontsize = 17);
 ![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Parametric_vs_Non_Parametric_files/Parametric_vs_Non_Parametric_7_0.png)
 
 
-The blue line is MSE for KNN Regression at different levels of K.  The black dotted line is the MSE for linear regression.  We see with lower values of K, KNN Regression outperforms linear regression (however there is a good chance it is overfitting).  We also see that as the number of features increases the parametric model (linear regression), outperforms the non-parametric model (KNN regression). 
+The blue line is MSE for KNN Regression at different levels of K.  The black dotted line is the MSE for linear regression.  We see with lower values of K, KNN Regression outperforms linear regression (however there is a good chance it is overfitting).  We also see that as the number of features increases the parametric model (linear regression), outperforms the non-parametric model (KNN regression). The non-parametric model struggles due to the Curse of Dimensionality.  
