@@ -271,8 +271,7 @@ logit.summary()
 <tr>
   <th>balance</th> <td>    0.0057</td> <td>    0.000</td> <td>   24.748</td> <td> 0.000</td> <td>    0.005</td> <td>    0.006</td>
 </tr>
-</table><br/><br/>Possibly complete quasi-separation: A fraction 0.15 of observations can be<br/>perfectly predicted. This might indicate that there is complete<br/>quasi-separation. In this case some parameters will not be identified.
-
+</table><br/>
 
 
 We now see that student has a negative coefficient, which means that students when balance is held constant students default at a lower rate than non-students.  This contradicts what our single variable logistic regression models says.  Lets take a look at why this happens. 
@@ -333,7 +332,7 @@ plt.yticks(fontsize = 16);
 ```
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Logistic%20Regression_files/Logistic_Regression_17_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Logistic_Regression_files/Logistic_Regression_17_0.png)
 
 
 We see that students on average have a higher balance than non-students.  But, we see when a student and a non-student have the same balance - the student is less likely to default. 
