@@ -37,6 +37,17 @@ title: Notes
 {% endif %}
 {% endfor %}
 
+<h1>Logistic Regression</h1>
+{% for project in site.projects reversed %}
+{% if project.category == 'Logistic Regression' %}
+<article role="article">
+  <h3><a href="{{ site.baseurl }}{{ project.url }}">
+    {{ project.title }}
+  </a></h3>
+</article>
+{% endif %}
+{% endfor %}
+
 <h1>Machine Learning</h1>
 {% for project in site.projects reversed %}
 {% if project.category == 'Machine Learning' %}
