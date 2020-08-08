@@ -97,7 +97,7 @@ plt.scatter(X[:, 0], X[:, 1], c = preds, cmap = 'Dark2');
 
 ![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_9_0.png)
 
-
+How do we know what is the optimal number of clusters to use?  One technique is silhouette score.  Silhouette score measures how similar the values in the cluster vs how similar the values are outside of the cluster.  Silhouette score can be between -1 and 1.  A score of 1 indicates the data points inside the cluster are very similar and datapoints in different clusters are very different.  
 
 ```python
 from sklearn.metrics import silhouette_score
@@ -224,7 +224,7 @@ plt.show()
 
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_filess/Clustering_12_2.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_12_2.png)
 
 
 
