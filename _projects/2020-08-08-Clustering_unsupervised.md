@@ -38,7 +38,7 @@ plt.show()
 ```
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_4_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_4_0.png)
 
 
 
@@ -54,7 +54,7 @@ plt.scatter(X[:, 0], X[:, 1], c = y);
 ```
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_6_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_6_0.png)
 
 
 
@@ -69,7 +69,7 @@ plt.scatter(X[:, 0], X[:, 1], c = preds, cmap = 'Dark2');
 ```
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_7_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_7_0.png)
 
 
 
@@ -82,7 +82,7 @@ plt.scatter(X[:, 0], X[:, 1], c = preds, cmap = 'Dark2');
 ```
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_8_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_8_0.png)
 
 
 
@@ -95,7 +95,7 @@ plt.scatter(X[:, 0], X[:, 1], c = preds, cmap = 'Dark2');
 ```
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_9_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_9_0.png)
 
 
 
@@ -220,23 +220,23 @@ plt.show()
 
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_12_1.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_12_1.png)
 
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_12_2.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_filess/Clustering_12_2.png)
 
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_12_3.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_12_3.png)
 
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_12_4.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_12_4.png)
 
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_12_5.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_12_5.png)
 
 
 ### Hierarchial Agglomerative Clustering
@@ -278,11 +278,11 @@ plt.show()
 ```
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_14_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_14_0.png)
 
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_14_1.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_14_1.png)
 
 
 We can see that it grouped 0 and 2 together and 1, 6, and 8 together first.  We can see the process for grouping another dataset below. 
@@ -293,7 +293,7 @@ mglearn.plots.plot_agglomerative()
 ```
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_16_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_16_0.png)
 
 
 Now I am going to see how it looks with a larger dataset. 
@@ -311,7 +311,7 @@ plt.ylabel('Cluster distance');
 ```
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_18_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_18_0.png)
 
 
 It's a little hard to see, so I can only show the last part of the dendogram.  
@@ -325,7 +325,7 @@ plt.show()
 ```
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_20_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_20_0.png)
 
 
 #### Compare Results of K-Means Clusters and HAC 
@@ -437,31 +437,31 @@ plt.show()
 
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_23_1.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_23_1.png)
 
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_23_2.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_23_2.png)
 
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_23_3.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_23_3.png)
 
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_23_4.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_23_4.png)
 
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_23_5.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_23_5.png)
 
 
 
-![png](Clustering_files/Clustering_23_6.png)
+![png]((https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_23_6.png)
 
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_23_7.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_23_7.png)
 
 
 
@@ -490,7 +490,7 @@ plt.show()
 ```
 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_files_us/Clustering_25_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Clustering_us_files/Clustering_25_0.png)
 
 
 
