@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Visualize Tree Based Mdels
+title: Visualize Tree Based Models
 description: How to Visualize Tree Based Models in Python
 category: Interpretability
 ---
