@@ -170,7 +170,7 @@ plt.imshow(X.reshape(28, 28));
 ![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Fashion_MNIST_Counterfactual_files/Fashion_MNIST_Counterfactual_12_0.png)
 
 
-To start I want to what changes to the above image would have to occur to change it any class.  I specified `other` for this reason. 
+To start I want to what changes to the above image would have to occur to change it to any class.  I specified `other` for this reason. 
 
 
 ```python
