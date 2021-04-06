@@ -162,8 +162,7 @@ Now lets visualize this.
 results.plot_simultaneous();
 ```
 
-
-![png](images/Tukey_Test_files/Tukey_Test_5_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Tukey_Test_files/Tukey_Test_5_0.png)
 
 
 The X-Axis is the number of cylinders and we see why the US had a statistically significant result, due to having a much higher mean number of cylinders.  
@@ -175,8 +174,7 @@ We can also highlight one of the groups using `comparison_name`.  I'm going to h
 results.plot_simultaneous(comparison_name = 'Japan');
 ```
 
-
-![png](images/Tukey_Test_files/Tukey_Test_7_0.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/Tukey_Test_files/Tukey_Test_7_0.png)
 
 
 This shows that Germany intersects the confidence interval of Germany and this is why they were not statistically different.  
