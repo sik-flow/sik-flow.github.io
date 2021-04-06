@@ -163,7 +163,7 @@ results.plot_simultaneous();
 ```
 
 
-![png](Tukey_Test_files/Tukey_Test_5_0.png)
+![png](images/Tukey_Test_files/Tukey_Test_5_0.png)
 
 
 The X-Axis is the number of cylinders and we see why the US had a statistically significant result, due to having a much higher mean number of cylinders.  
@@ -176,7 +176,7 @@ results.plot_simultaneous(comparison_name = 'Japan');
 ```
 
 
-![png](Tukey_Test_files/Tukey_Test_7_0.png)
+![png](images/Tukey_Test_files/Tukey_Test_7_0.png)
 
 
 This shows that Germany intersects the confidence interval of Germany and this is why they were not statistically different.  
