@@ -59,6 +59,17 @@ title: Notes
 {% endif %}
 {% endfor %}
 
+<h1>Statistics</h1>
+{% for project in site.projects reversed %}
+{% if project.category == 'Statistics' %}
+<article role="article">
+  <h3><a href="{{ site.baseurl }}{{ project.url }}">
+    {{ project.title }}
+  </a></h3>
+</article>
+{% endif %}
+{% endfor %}
+
 <h1>Visualization</h1>
 {% for project in site.projects reversed %}
 {% if project.category == 'Visualization' %}
