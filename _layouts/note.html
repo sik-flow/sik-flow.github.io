@@ -78,5 +78,14 @@ title: Notes
     {{ project.title }}
   </a></h3>
 </article>
+
+<h1>Papers</h1>
+{% for project in site.projects reversed %}
+{% if project.category == 'Papers' %}
+<article role="article">
+  <h3><a href="{{ site.baseurl }}{{ project.url }}">
+    {{ project.title }}
+  </a></h3>
+</article>
 {% endif %}
 {% endfor %}
