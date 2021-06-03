@@ -13,7 +13,7 @@ The authors show that using a rule-list-based model, an interpretable model, the
 ### What were the key elements of the approach?
 The authors used what they described as Bayesian Rule lists to come up with rules for predicting the risk of stroke patients.  This produced lists the following: 
 
-![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/rule_list.png)
+![png](https://raw.githubusercontent.com/sik-flow/sik-flow.github.io/master/_projects/images/rule_lists.png)
 
 
 This shows that if someone has hemiplegia and is over the age of 60, their stroke risk is 58.9% with a 95% confidence interval of 53.8%-63.8%.  In an effort to make the rules as easily explainable as possible, they focused on making each of the rules sparse.  
