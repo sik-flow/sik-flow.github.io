@@ -1,7 +1,7 @@
 ---
 layout: project
-title: Interpretable Classifiers Using Rules and Bayesian Analysis: Building a Better Stroke Prediction Model
-description: Rule-Lists Paper Review
+title: Interpretable Classifiers Using Rules and Bayesian Analysis: Building a Better Stroke Prediction Model 
+description: Rule List Paper Review
 category: Papers
 ---
 
