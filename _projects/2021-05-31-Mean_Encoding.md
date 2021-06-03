@@ -189,7 +189,7 @@ df_dummies
 
 
 
-This makes the dataset wide, as we went from having 2 columns to 4 columns.  Another approach is using mean-encoding.  This takes the conditional probability for each category $ \Pr( class | category )  $ and replaces the category with that probability.  An example is below 
+This makes the dataset wide, as we went from having 2 columns to 4 columns.  Another approach is using mean-encoding.  This takes the conditional probability for each category and replaces the category with that probability.  An example is below 
 
 
 ```python
